@@ -1,0 +1,322 @@
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #3b82f6;
+      padding: 1rem;
+      color: white;
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-icon div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    /* Sidebar Menu */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100vw;
+      height: 100vh;
+      background-color: #0062ff;
+      color: white;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .side-menu.show {
+      left: 0;
+    }
+    
+    #cut {
+      width: 40px;
+      height: 40px;
+      font-size: 30px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #cut:hover {
+      border-radius: 50%;
+      background-color: #3b82f6;
+    }
+    
+
+    #refresh {
+      width: 40px;
+      height: 40px;
+      font-size: 22px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 60px;
+    }
+    
+    #refresh:hover {
+      background-color: #3b82f6;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spinOnce {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    #refresh.spin {
+      animation: spinOnce 0.6s ease;
+    }
+    
+
+    .side-content {
+      margin-top: 50px; /* adjust as needed */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    
+    .side-menu button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      text-align: left;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+
+    .side{
+      margin-top: 7rem;
+    }
+    .side-menu.show {
+      left: 0;
+    }
+
+    .login-container, .dashboard {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: white;
+    
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #3b82f6;
+    }
+
+    .logout-btn {
+      background-color: #ef4444;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+/* Attendance Section Styling */
+#recordsSection {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* Heading Styling */
+#recordsSection h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Table Styling */
+#recordsTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Headers */
+#recordsTable thead {
+  background-color: #3b82f6;
+  color: white;
+}
+
+#recordsTable thead th {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Table Rows */
+#recordsTable tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease;
+}
+
+#recordsTable tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Table Data */
+#recordsTable tbody td {
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #recordsSection {
+    padding: 1.5rem;
+  }
+
+  #recordsTable thead {
+    display: none;
+  }
+
+  #recordsTable, #recordsTable tbody, #recordsTable tr, #recordsTable td {
+    display: block;
+    width: 100%;
+  }
+
+  #recordsTable tbody td {
+    padding: 0.75rem;
+    text-align: right;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  #recordsTable tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #475569;
+    font-size: 0.85rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+    /* .hidden {
+      display: none;
+    } */
+    .com_nav{
+        width: 100%;
+        display: flex;
+    }
+    .l_nav,.r_nav{
+        width: 50%;
+    }
+    .l_nav h3{
+        text-align: left;
+    }
+    .r_nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .r_nav button{
+        border: 0;
+
+    }
+    .r_nav button:hover {
+        background-color: #3b5ef6;
+
+    }
+    @media (max-width: 600px) {
+      .menu-icon {
+        display: flex;
+      }
+      .r_nav{
+        display: none;
+      }
+    }
