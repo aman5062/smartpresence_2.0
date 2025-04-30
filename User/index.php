@@ -200,7 +200,7 @@ button:active {
 
   <div class="login-container" id="loginContainer">
     <h2>User Login</h2>
-    <form method="POST" action="assets/html/login_check.php"> <!-- Form submits to login.php -->
+    <form method="POST" action="assets/html/login_check.php">
       <input type="text" id="enrollment" name="enrollment" placeholder="Enrollment no." required />
       <input type="password" id="password" name="password" placeholder="Password" required />
       
